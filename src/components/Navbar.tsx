@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <Bot className="w-8 h-8 text-primary" />
             <span className="text-xl font-bold text-foreground">
-              Discord AI Chat
+              Discord AI Assistant
             </span>
           </div>
 
