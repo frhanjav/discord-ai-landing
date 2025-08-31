@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Bot, Menu, X } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Bot, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Technology', href: '#technology' },
-    { name: 'AI Personalities', href: '#personalities' },
-    { name: 'How It Works', href: '#how-it-works' },
-
+    { name: "Technology", href: "#technology" },
+    { name: "AI Personalities", href: "#personalities" },
+    { name: "How It Works", href: "#how-it-works" },
   ];
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
@@ -27,7 +26,9 @@ const Navbar = () => {
           {/* Logo and Title */}
           <div className="flex items-center gap-3">
             <Bot className="w-8 h-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">Discord AI Chat</span>
+            <span className="text-xl font-bold text-foreground">
+              Discord AI Chat
+            </span>
           </div>
 
           {/* Desktop Navigation */}
@@ -45,10 +46,17 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="default" size="sm">
-              <Bot className="w-4 h-4 mr-2" />
-              Add to Discord
-            </Button>
+            <a
+              href="https://discord.com/oauth2/authorize?client_id=1409855867834073279&permissions=40138653572864&integration_type=0&scope=bot+applications.commands"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <Button variant="default" size="sm">
+                <Bot className="w-4 h-4 mr-2" />
+                Add to Discord
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -73,10 +81,17 @@ const Navbar = () => {
                   {item.name}
                 </button>
               ))}
-              <Button variant="default" size="sm" className="mt-4">
-                <Bot className="w-4 h-4 mr-2" />
-                Add to Discord
-              </Button>
+              <a
+                href="https://discord.com/oauth2/authorize?client_id=1409855867834073279&permissions=40138653572864&integration_type=0&scope=bot+applications.commands"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <Button variant="default" size="sm" className="mt-4">
+                  <Bot className="w-4 h-4 mr-2" />
+                  Add to Discord
+                </Button>
+              </a>
             </div>
           </div>
         )}
